@@ -1,38 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Somando Números</title>
     <style>
-        body {
-        font: normal 18pt Arial;
-        }
-        input {
-            font: normal 18pt Arial;
+         body {
+            font-family: Arial, Helvetica, sans-serif;
+         }
+         input {
+            font-size: 1.2em;
             width: 100px;
-        }
-        div#res {
-            margin-top: 20px
-        }
+         }
+
+         div {
+            margin-top: 20px;
+         }
     </style>
 </head>
 <body>
     <h1>Somando Valores</h1>
-    <input type="number" name="txtn1" id="txtn1"> +
-    <input type="number" name="txtn2" id="txtn2">
-    <input type="button" value="Somar" onclick="somar()">
-    <div id="res">Resultado</div>
+    <input type="number" name="txtn1" id="itxtn1"> + 
+    <input type="number" name="txtn2" id="itxtn2">
+    <input type="button" value="somar" onclick="somar()">
+    <div>resultado</div>
     <script>
         function somar() {
-            var txt1 = window.document.getElementById('txtn1')
-            var txt2 = window.document.getElementById('txtn2')
-            var res = window.document.querySelector('div#res')
-            var n1 = Number(txt1.value)
-            var n2 = Number(txt2.value)
-            var s = n1 + n2
-            res.innerText = `A soma entre ${n1} e ${n2} é ${s}`
+            let txtn1 = document.getElementById('itxtn1') 
+            let txtn2 = document.getElementById('itxtn2')
+            let div = document.getElementsByTagName('div')[0]
+            let n1 = Number(txtn1.value)
+            let n2 = Number(txtn2.value)
+            let soma = n1 + n2
+            div.innerHTML = `A soma entre ${n1} e ${n2} é ${soma}`
         }
     </script>
 </body>

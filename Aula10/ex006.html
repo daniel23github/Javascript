@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Eventos DOM</title>
     <style>
         div#area {
-            font: normal 20pt Arial;
-            background: green; 
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20pt;
+            background-color: green;
             color: white;
             width: 200px;
             height: 200px;
-            line-height: 200px;
             text-align: center;
+            line-height: 200px;
         }
     </style>
 </head>
@@ -21,22 +22,28 @@
     <div id="area">
         Interaja...
     </div>
-    <p id="msg">Esse é um teste de cores!</p>
-    <script>
-        var a = window.document.getElementById('area')
-        a.addEventListener('click',clicar)
-        a.addEventListener('mouseenter', entrar)
-        a.addEventListener('mouseout', sair)
-        function clicar() {    
-            a.innerText = 'Clicou!'
-            a.style.background = 'red'
-        }  
-        function entrar() {
-            a.innerText = 'Entrou!'
+    <script>            
+        let d = document.querySelector('div#area')
+        d.addEventListener('mousedown', clicar)
+        d.addEventListener('mouseenter', entrou)
+        d.addEventListener('mouseout', saiu)
+        d.addEventListener('mouseup', soltou)
+        function clicar() {
+            d.innerHTML = 'Você Clicou!'
+            d.style.background = 'red'
         }
-        function sair() {
-            a.innerText = 'Saiu!'
-            a.style.background = 'green'
+
+        function soltou() {
+            d.innerHTML = 'interaja...'
+            d.style.background = 'green'
+        }
+
+        function entrou() {
+            d.style.background = 'blue'
+        }
+
+        function saiu() {
+            d.style.background = 'green'
         }
     </script>
 </body>
