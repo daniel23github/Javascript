@@ -1,33 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        input {
-            font: normal 18pt Arial;
-            width: 200px;
-        }
-    </style>
+    <title>Estrangeiro ou Brasileiro</title>
 </head>
 <body>
-    <input type="text" name="txt" id="txt">
-    <input type="button" value="Verificar" onclick="clicar()">
-    <div id = 'res'>
+    <h1>Verificação</h1>
+    <label for="inac">País de nascimento: </label>
+    <input type="text" name="nac" id="inac">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <p id="res"></p>
 
-    </div>
     <script>
-        function clicar() {
-            var nac = window.document.getElementById('txt')
-            var id = window.document.querySelector('div#res')
-            id.innerHTML = `<p>Sua nacionalidade é <strong>${nac.value}</strong></p>`
-            if (nac.value == 'Brasil') {
-                id.innerHTML = '<p>Você é brasileiro!</p>'
+        function verificar() {
+            let nac = document.getElementById('inac')
+            let res = document.getElementById('res')
+            nac = nac.value.toUpperCase()
+            if (nac == 'BRASIL') {
+                res.innerHTML = 'Brasileiro'
             }
+
             else {
-                id.innerHTML = '<p>Você é estrangeiro!</p>'
+                res.innerHTML = 'Estrangeiro'
             }
         }
     </script>

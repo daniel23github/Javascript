@@ -1,7 +1,8 @@
-var pais = 'França'
-if (pais == 'Brasil') {
-    console.log('Brasileira!')
+let país = 'Brasil'
+if ('Brasil') {
+    console.log('Brasileiro')
+
 }
 else {
-    console.log('Estrangeira!')
+    console.log('Estrangeiro')
 }
