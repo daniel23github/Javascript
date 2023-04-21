@@ -26,3 +26,7 @@ footer {
     text-align: center;
 }
 
+main > section > div {
+    text-align: center;
+}
+
