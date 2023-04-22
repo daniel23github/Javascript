@@ -2,7 +2,6 @@ let numeros = []
 
 function adicionar() {
     let res = document.getElementById('res')
-    res.innerHTML = ''
     let num = document.getElementById('inum')
     let n = Number(num.value)
     let sel = document.getElementById('isel')
@@ -14,7 +13,8 @@ function adicionar() {
         numeros.push(n)
         let opt = document.createElement('option')
         opt.text = `Valor ${n} adicionado.`
-        sel.appendChild(opt)
+        sel.appendChild(opt)      
+        res.innerHTML = ''
 
     }
     num.value = ''
