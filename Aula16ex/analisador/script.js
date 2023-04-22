@@ -3,7 +3,8 @@ let numeros = []
 function adicionar() {
     let res = document.getElementById('res')
     res.innerHTML = ''
-    let n = Number(document.getElementById('inum').value)
+    let num = document.getElementById('inum')
+    let n = Number(num.value)
     let sel = document.getElementById('isel')
     if (numeros.indexOf(n) != -1 || n.length == 0 || n < 1 || n > 100) {
         alert('Valor invalido!')
@@ -16,6 +17,8 @@ function adicionar() {
         sel.appendChild(opt)
 
     }
+    num.value = ''
+    num.focus()
 }
 
 function finalizar() {
