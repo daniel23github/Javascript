@@ -22,15 +22,19 @@ function verificar() {
     }
 }
 
-function data(str) {
-    var str = "hoje é 26/04/2023 e amanhã sera 27/04/2023. Meu aniversario é 08/02"
-    var meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
+var str = "hoje é 01/05/2023 e amanhã sera 02/05/2023. Meu aniversario é 08/02"
+var meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
 
-    function formatData(str) {
-        var dia = ''
-        var regex = //g
-        str.replace(regex, function() {
-
-        })
-    }
+function formatData(str) {
+    var dia = ''
+    var regex = /(\d{1,2})\/(\d{1,2})(?:\/(\d{2,4}))?/g
+    return str.replace(regex, function(a,b,c,d,e,f) {
+        dia = b + ' de ' + meses[parseInt(c) - 1]
+        dia += (d) ? ' de ' + d : ''
+        return dia;
+    })
 }
+
+
+str = formatData(str)
+console.log(str)
